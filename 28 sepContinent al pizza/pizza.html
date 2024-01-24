@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pizza.css">
+    <title>Pizza discount</title>
+</head>
+
+<body>
+    <h1>Welcome to Continental Pizza</h1>
+    <div>
+        <img style="width: 30%;" src="pizza.jpg" alt="">
+        <h4>Corn pizza</h4>
+        <label id="label" for="">Rs:</label>
+        <button id="price">280</button>
+        <button onclick="alert('Your item is added to cart.Please apply COUPON')" id="add">Add to cart</button>
+        <button onclick="getvalue()" id="Coupon1">Coupon1- flat 50%off</button>
+        <button onclick="getvalue1()" id="Coupon2">Coupon2 -3 free deliveries</button>
+
+
+        <h2>Final price:</h2>
+        <h2 id="final_amt"></h2>
+
+
+    </div>
+    <script src="pizza.js"></script>
+</body>
+
+</html>
