@@ -33,7 +33,7 @@ pipeline {
         }
 
         // Add more stages as needed (e.g., testing, deployment)
-
+    }
     post {
         success {
             echo 'Build successful!'
@@ -42,5 +42,5 @@ pipeline {
             echo 'Build failed. Take necessary actions.'
         }
     }
-    }            
+                
 }    
