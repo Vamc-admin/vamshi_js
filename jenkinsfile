@@ -12,5 +12,35 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Vamc-admin/vamshi_js.git'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                // Install Node.js dependencies
+                script {
+                    def nodeHome = tool 'NodeJS'
+                    env.PATH = "${nodeHome}/bin:${env.PATH}"
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Build your JavaScript project
+                script {
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        // Add more stages as needed (e.g., testing, deployment)
+
+    post {
+        success {
+            echo 'Build successful!'
+        }
+        failure {
+            echo 'Build failed. Take necessary actions.'
+        }
+    }
     }            
 }    
