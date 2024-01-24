@@ -12,16 +12,6 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Vamc-admin/vamshi_js.git'
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                // Install Node.js dependencies
-                script {
-                    def nodeHome = tool 'NodeJS'
-                    env.PATH = "${nodeHome}/bin:${env.PATH}"
-                    sh 'npm install'
-                }
-            }
-        }
 
         stage('Build') {
             steps {
